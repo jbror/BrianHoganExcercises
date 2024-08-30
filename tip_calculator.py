@@ -16,16 +16,16 @@
 def check_input():
     while True: #Kollar så bill amount blir rätt input
         try:
-            binput =float(input('Enter bill amout, only numbers\n'))
-            if type(binput) == float:
+            binput =float(input('Enter bill amout, only numbers(non negative!)\n'))
+            if type(binput) == float and binput >= 0:
                 break
         except ValueError:
             print('Only numbers!')
 
     while True: #Kollar så tip amount (procent) blir rätt input
         try:
-            tinput =int(input('Enter the tip percentage, only numbers\n'))
-            if type(tinput) == int:
+            tinput =int(input('Enter the tip percentage, only numbers(non negative!\n'))
+            if type(tinput) == int and tinput >= 0:
                 break
         except ValueError:
             print('Only numbers!')
@@ -35,8 +35,12 @@ def check_input():
 
 
 ci = check_input()
-#print(ci)
+bill_amount = ci[0]
+tip_rate = ci[1]
 
+
+def display_output(t,b):# Här visas tip, t och totalen b
+    print('yo')
 
 
 
