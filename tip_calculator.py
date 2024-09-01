@@ -39,10 +39,16 @@ bill_amount = ci[0]
 tip_rate = ci[1]
 
 
-def display_output(t,b):# Här visas tip, t och totalen b
-    print('yo')
+def display_output(b,t):# Här visas tip, t och totalen b
+    print(f"The bill with non tip is {b:.3f}!") #detta printar b med 3 decimaler(:.3f) etc :.2f är 2 decimaler osv...!
+    print(f"The percentage tip is set to {t}%")
+    #print(t)
+    #print(b)
+
+    return t, b
 
 
 
 
 
+display = display_output(bill_amount, tip_rate)
