@@ -35,15 +35,26 @@ def check_input():
 
 
 ci = check_input()
+
 bill_amount = ci[0]
 tip_rate = ci[1]
 
+#tip_amount = bill_amount * (tip_rate / 100)
+#total = bill_amount + tip_amount
+#print(total)
+#print(tip_amount)
+
 
 def display_output(b,t):# Här visas tip, t och totalen b
-    print(f"The bill with non tip is {b:.3f}!") #detta printar b med 3 decimaler(:.3f) etc :.2f är 2 decimaler osv...!
+    tip_amount = b * (t / 100)
+    total = b + tip_amount
+
+    print(f"The bill with non tip is {b:.2f}!") #detta printar b med 3 decimaler(:.3f) etc :.2f är 2 decimaler osv...!
     print(f"The percentage tip is set to {t}%")
-    #print(t)
-    #print(b)
+    print()
+    print(f'Total bill is {total:.2f}')
+    print(f'The tip you pay is {tip_amount:.2f}')
+
 
     return t, b
 
