@@ -1,4 +1,5 @@
 #The solution should follow these constraints:
+
 #Enter the tip as a percentage. For example, a 15% tip
 #would be entered as 15, not 0.15. Your program should
 #handle the division.
@@ -34,29 +35,12 @@ def check_input():
 
 
 
-ci = check_input() #Här tar vi inputen och kollar så den anges rätt.
+def calculate_total(bill, tip_percentage):
 
-bill_amount = ci[0] #Sparar notan
-tip_rate = ci[1] #Sparar procentvärdet av tip som vi vill betala
+    tip_amount = bill * (tip_percentage / 100)
+    total = bill + tip_amount
 
-
-def calculate_given_input(bill_input, tip_input):
-
-    tip_amount = bill_input * (tip_input / 100)
-    total = bill_input + tip_amount
-
-    return total, tip_amount #Ger oss totalen att betala samt hur mycket som är tips
-
-
-
-calculations = calculate_given_input(bill_amount, tip_rate)
-
-
-tip_given = calculations[1]
-final_amount = calculations[0]
-
-
-
+    return tip_amount, total, #Ger oss totalen att betala samt hur mycket som är tips
 
 
 def display_output(bill_without_tip, tip_percentage_given, output_tip, output_final_amount): # Här skickar vi med allt som ska visas. Notan utan tips, hur mycket tips vi vill ge, tips vi betalar, och slutsumman för notan med tips.
@@ -70,6 +54,16 @@ def display_output(bill_without_tip, tip_percentage_given, output_tip, output_fi
     print(f'The tip you pay is {output_tip:.2f}')
 
 
+
+
+ci = check_input() #Här tar vi inputen och kollar så den anges rätt.
+
+bill_amount = ci[0] #Sparar notan
+tip_rate = ci[1] #Sparar procentvärdet av tip som vi vill betala
+
+
+
+tip_given, final_amount = calculate_total(bill_amount, tip_rate)
 
 
 
