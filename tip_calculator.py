@@ -45,27 +45,20 @@ def calculate_total(bill, tip_percentage):
 
 def display_output(bill_without_tip, tip_percentage_given, output_tip, output_final_amount): # Här skickar vi med allt som ska visas. Notan utan tips, hur mycket tips vi vill ge, tips vi betalar, och slutsumman för notan med tips.
 
-
-
     print(f"The bill with non tip is {bill_without_tip:.2f}!")
     print(f"The percentage tip is set to {tip_percentage_given}%")
     print()
     print(f'Total bill is {output_final_amount:.2f}')
     print(f'The tip you pay is {output_tip:.2f}')
 
+#ci = check_input() #Här tar vi inputen och kollar så den anges rätt.
 
+#bill_amount = ci[0] #Sparar notan
+#tip_rate = ci[1] #Sparar procentvärdet av tip som vi vill betala
 
-
-ci = check_input() #Här tar vi inputen och kollar så den anges rätt.
-
-bill_amount = ci[0] #Sparar notan
-tip_rate = ci[1] #Sparar procentvärdet av tip som vi vill betala
-
-
+bill_amount, tip_rate = check_input()
 
 tip_given, final_amount = calculate_total(bill_amount, tip_rate)
-
-
 
 display = display_output(bill_amount, tip_rate, tip_given, final_amount)
 
