@@ -1,3 +1,4 @@
+
 #The “Hello, World” program is the first program you learn to write in many languages, but it doesn’t involve any input.
 #So create a program that prompts for your name and printsa greeting using your name.
 
@@ -17,4 +18,31 @@
 
 #And as in the previous excercise, try to structure your program into meaningful functions and be mindful in how you name them.
 
-def saying_hello():
+def askforname ():
+
+    get_name = input ('Hi there! Please tell me your name\n')
+    return get_name.lower()
+
+
+
+
+
+
+def check_exceptions (name, exceptions):
+
+
+
+
+
+
+
+
+exceptions = [
+'Alfred',
+'Glenn',
+'Erik',
+]
+
+
+name = askforname()
+print(name)
