@@ -1,5 +1,6 @@
 
-#The “Hello, World” program is the first program you learn to write in many languages, but it doesn’t involve any input.
+#The “Hello, World” program is the
+#first program you learn to write in many languages, but it doesn’t involve any input.
 #So create a program that prompts for your name and printsa greeting using your name.
 
 #Example Output
@@ -26,23 +27,29 @@ def askforname ():
 
 
 
+def check_exceptions (name, exceptions_lower):
+
+    if name in exceptions:
+        print('Is here')
+
+    else:
+        print('not here')
+
+def put_exceptionshere(): #Här bakar jag in listan med undantag i en funktion. Kallar man på funktionen får du listan som lower().
+
+    exceptions = [
+    'Alfred',
+    'Glenn',
+    'Erik',
+    ]
+
+    exceptions_lower = [x.lower() for x in exceptions] # Gör listan med namn som är "undantag" till lower
+    return exceptions_lower
 
 
-def check_exceptions (name, exceptions):
 
 
+exceptions = put_exceptionshere()
+get_name = askforname()
 
-
-
-
-
-
-exceptions = [
-'Alfred',
-'Glenn',
-'Erik',
-]
-
-
-name = askforname()
-print(name)
+check_exceptions(get_name, exceptions)
