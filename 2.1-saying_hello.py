@@ -19,6 +19,8 @@
 
 #And as in the previous excercise, try to structure your program into meaningful functions and be mindful in how you name them.
 
+
+
 def askforname ():
 
     get_name = input ('Hi there! Please tell me your name\n')
@@ -26,14 +28,28 @@ def askforname ():
 
 
 
+def check_name_inexception(name, exceptions):
+    is_match = []
 
-def check_exceptions (name, exceptions_lower):
+    for i in exceptions:
+        if i in name:
+            #print(i + 'is here' )
+            is_match.append(i)
+        else:
+            continue
 
-    if name in exceptions:
-        print('Is here')
+    return is_match
 
-    else:
-        print('not here')
+
+        #print(i)
+        #print(i in name)
+    #if name in exceptions:
+    #    print('Is here')
+    #
+    #else:
+    #    print('not here')
+
+
 
 def put_exceptionshere(): #Här bakar jag in listan med undantag i en funktion. Kallar man på funktionen får du listan som lower().
 
@@ -49,7 +65,21 @@ def put_exceptionshere(): #Här bakar jag in listan med undantag i en funktion. 
 
 
 
+
+
+def greet(matches):
+
+    if matches == 'glenn':
+        print('Hallå änna Glenn')
+
+    elif matches == 'erik':
+        print('Tjena Brush')
+
+    elif matches == 'alfred':
+        print('Tjena Brush')
+
+
 exceptions = put_exceptionshere()
 get_name = askforname()
-
-check_exceptions(get_name, exceptions)
+matches = check_name_inexception(get_name, exceptions)
+greet(get_name)
