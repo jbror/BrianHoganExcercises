@@ -21,37 +21,13 @@
 
 
 
-def askforname ():
+def ask_for_name ():
 
     get_name = input ('Hi there! Please tell me your name\n')
     return get_name.lower()
 
 
-
-def check_name_inexception(name, exceptions):
-    is_match = []
-
-    for i in exceptions:
-        if i in name:
-            #print(i + 'is here' )
-            is_match.append(i)
-        else:
-            continue
-
-    return is_match
-
-
-        #print(i)
-        #print(i in name)
-    #if name in exceptions:
-    #    print('Is here')
-    #
-    #else:
-    #    print('not here')
-
-
-
-def put_exceptionshere(): #Här bakar jag in listan med undantag i en funktion. Kallar man på funktionen får du listan som lower().
+def put_exceptions_here(): #Här bakar jag in listan med undantag i en funktion. Kallar man på funktionen får du listan som lower().
 
     exceptions = [
     'Alfred',
@@ -63,23 +39,21 @@ def put_exceptionshere(): #Här bakar jag in listan med undantag i en funktion. 
     return exceptions_lower
 
 
+def greet(name):
 
-
-
-
-def greet(matches):
-
-    if matches == 'glenn':
+    if name == 'glenn':
         print('Hallå änna Glenn')
 
-    elif matches == 'erik':
+    elif name == 'erik':
         print('Tjena Brush')
 
-    elif matches == 'alfred':
+    elif name == 'alfred':
         print('Tjena Brush')
 
+    else:
+        print(f"Hello {name.capitalize()}, it's nice to meet you. Bengt is the one true god. Go in peace!")
 
-exceptions = put_exceptionshere()
-get_name = askforname()
-matches = check_name_inexception(get_name, exceptions)
+exceptions = put_exceptions_here()
+get_name = ask_for_name()
 greet(get_name)
+
