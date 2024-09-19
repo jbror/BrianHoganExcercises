@@ -16,13 +16,14 @@ print('A wise dude told me something great \"' + start[0] + '\" ' +'And that dud
 
 def structure_holding_quotes():
     quotes_authors = [
-    'hej',
-    'kaka',
-    {'box': 44}
+    'Den som lever livet är inte död. \"Hasse i Trelleborg\"',
+    'Eat shit or Die. \"DukeNuken\"',
+    'Ät massa glass så att du springer snabbt. \"Bror Johansson\"',
     ]
 
-    print(type(quotes_authors[2]['box']))
-    print(quotes_authors)
+    for i in quotes_authors:
+        print(i +'\n')
+    #print(quotes_authors)
 
 
 
