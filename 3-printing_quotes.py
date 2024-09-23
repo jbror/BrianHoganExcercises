@@ -1,3 +1,5 @@
+#Koden som är kommenterad är första uppgiften och koden utanför är den andra uppgiften eller extrauppgiften "Challange.
+
 """
 def get_quotes():
     get_quotes = input('Enter any inspirational quotes about life, please!\n')
@@ -9,10 +11,7 @@ start = get_quotes()
 print('A wise dude told me something great \"' + start[0] + '\" ' +'And that dude is the almighty ' + start[1].capitalize() +'.')
 """
 
-
-
 #Uppgiften under "Challange" från boken.
-
 
 def structure_holding_quotes():
     quotes_authors = [
@@ -23,7 +22,7 @@ def structure_holding_quotes():
 
     for i in quotes_authors:
         print(i +'\n')
-    #print(quotes_authors)
+
 
 
 
