@@ -13,17 +13,18 @@ print('A wise dude told me something great \"' + start[0] + '\" ' +'And that dud
 
 #Uppgiften under "Challange" från boken.
 
-def structure_holding_quotes():
-    quotes_authors = [
-    'Den som lever livet är inte död. \"Hasse i Trelleborg\"',
-    'Eat shit or Die. \"DukeNuken\"',
-    'Ät massa glass så att du springer snabbt. \"Bror Johansson\"',
-    ]
-
-    for i in quotes_authors:
-        print(i +'\n')
+quotes_authors = [
+{'Den som lever livet är inte död.': '\"Hasse i Trelleborg\"'},
+{'Eat shit or Die.': '\"DukeNuken\"'},
+{'Ät massa glass så att du springer snabbt.': '\"Bror Johansson\"'}
+]
 
 
+#for i in quotes_authors:
+#    print(i)
 
 
-structure_holding_quotes()
+
+for quotes_dict in quotes_authors:
+    for q, a in quotes_dict.items():
+        print(q, a)
