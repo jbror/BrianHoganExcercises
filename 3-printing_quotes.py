@@ -14,16 +14,16 @@ print('A wise dude told me something great \"' + start[0] + '\" ' +'And that dud
 #Uppgiften under "Challange" från boken.
 
 quotes_authors = [
-{'Den som lever livet är inte död.': '\"Hasse i Trelleborg\"'},
-{'Eat shit or Die.': '\"DukeNuken\"'},
-{'Ät massa glass så att du springer snabbt.': '\"Bror Johansson\"'}
+{'author': 'Hasse i Trelleborg', 'quote': '\"Den som lever livet är inte död.\"'},
+{'author': 'DukeNuken', 'quote': '\"Eat shit or Die.\"'},
+{'author': 'Bror Johansson', 'quote': '\"Ät massa glass så att du springer snabbt.\"'}
 ]
 
+get_len = len(quotes_authors)
+for i in range(get_len):
+    print('A wise dude told me something great ' + quotes_authors[i]['quote'] + ' ' +'And that dude is the almighty ' + quotes_authors[i]['author'].capitalize() +'.')
 
-#for i in quotes_authors:
-#    print(i)
-
-
+print('\n' + 'And here it comes again in a similar way' + '\n')
 
 for quotes_dict in quotes_authors:
     for q, a in quotes_dict.items():
