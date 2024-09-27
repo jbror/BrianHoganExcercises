@@ -26,5 +26,5 @@ for i in range(get_len):
 print('\n' + 'And here it comes again in a similar way' + '\n')
 
 for quotes_dict in quotes_authors:
-    for q, a in quotes_dict.items():
-        print(q, a)
+    print('author ' + quotes_dict['author'])
+    print('quote ' + quotes_dict['quote'])
