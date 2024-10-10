@@ -11,12 +11,3 @@ start = mad_lib()
 
 
 
-"""
-
-Enter a noun: apple
-Enter a verb: sleep
-Enter an adjective: yellow
-Enter an adverb: quietly
-
-Imagine a yellow apple that sleeps quietly on a windowsill, dreaming of becoming a famous apple. That's pretty neat yo!
-"""
