@@ -23,10 +23,10 @@ start = prompt_input()
 n1 = float(start[0])
 n2 = float(start[1])
 
-
 plus = sums(n1, n2)
 minus = difference(n1, n2)
 prod = product(n1, n2)
 quot = quotient(n1, n2)
 
-print(f'{n1} + {n2} = {plus}kaka', end='')
+print(f'What is the first number? {n1} \nWhat is the second number? {n2}\n{n1} + {n2} = {plus}\n\
+{n1} - {n2} = {minus}\n{n1} * {n2} = {prod}\n{n1} / {n2} = {quot}')
