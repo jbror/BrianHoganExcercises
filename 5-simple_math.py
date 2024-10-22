@@ -6,16 +6,16 @@ def prompt_input():
             return first_num, second_num
         except ValueError:
             print('Only numbers!')
-def sums(n1, n2):
+def plus(n1, n2):
     return n1 + n2
 
-def difference(n1, n2):
+def minus(n1, n2):
     return n1 - n2
 
-def product(n1, n2):
+def multiply(n1, n2):
     return n1 * n2
 
-def quotient(n1, n2):
+def divided(n1, n2):
     return n1 / n2
 
 start = prompt_input()
@@ -23,10 +23,10 @@ start = prompt_input()
 n1 = float(start[0])
 n2 = float(start[1])
 
-plus = sums(n1, n2)
-minus = difference(n1, n2)
-prod = product(n1, n2)
-quot = quotient(n1, n2)
+sums = plus(n1, n2)
+difference = minus(n1, n2)
+product = multiply(n1, n2)
+quotient = divided(n1, n2)
 
-print(f'What is the first number? {n1} \nWhat is the second number? {n2}\n{n1} + {n2} = {plus}\n\
-{n1} - {n2} = {minus}\n{n1} * {n2} = {prod}\n{n1} / {n2} = {quot}')
+print(f'What is the first number? {n1} \nWhat is the second number? {n2}\n{n1} + {n2} = {sums}\n\
+{n1} - {n2} = {difference}\n{n1} * {n2} = {product}\n{n1} / {n2} = {quotient}')
