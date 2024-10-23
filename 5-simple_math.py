@@ -20,8 +20,8 @@ def divided(n1, n2):
 
 start = prompt_input()
 
-n1 = float(start[0])
-n2 = float(start[1])
+n1 = (start[0])
+n2 = (start[1])
 
 sums = plus(n1, n2)
 difference = minus(n1, n2)
