@@ -36,7 +36,7 @@ time.sleep(3)
 
 
 
-
+print(f'You are now {age:.0f} years old. You want to retire when you are {retirement_age} years old..')
 
 
 
