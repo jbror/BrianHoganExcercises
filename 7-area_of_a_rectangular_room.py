@@ -12,6 +12,8 @@ def prompt_length_width(prompt):
 
 def calculate_area(length, width):
     square_unit = length * width
+    #square_feet =
+    #square_meters =
     print(square_unit)
 
 
