@@ -5,25 +5,37 @@ import math #
 def prompt_float(prompt):
     while True:
         try:
-            area_data = float(input(prompt))
-            return area_data
+            pos = float(input(prompt))
+            return pos
         except ValueError:
             print('Just floats')
 
 
-def calculate_area(length, width):
-    area = length * width
-    return area
+
+item_count = 0
+quantity    = 0
+price      = 0
+
+items = []
 
 
-def calculate_gallons_needed(area): # How many whole gallons is needed? Find out with this!
-    return math.ceil(area / PAINT_COVERAGE) # Rounds up to next whole number!
+price_of_item = prompt_float(f'Enter price of item {str(item_count +1)}:\n')
+quantity_of_item = prompt_float(f'Enter the quantity of item {str(item_count +1)}:\n')
+item_count +=1
 
 
-price_of_item = prompt_float('Enter price of item 1:\n')
-quanity_of_item = prompt_float('Enter the quanity of item 1:\n')
+items.append({'item_number'+str(item_count):{'price':price_of_item}})
+items[0]='item_number'+str(item_count)'quantity':= 2
+print(items)
 
-item_and_price = # store in this? Dictonary maybe?
+
+#item_and_price = # store in this? Dictonary maybe?
+
+
+
+
+
+
 
 
 
