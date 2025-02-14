@@ -1,35 +1,47 @@
-#10 Self-Checkout
-import math #
+class SupermarketItem: # This will represent an item
+
+    def __init__(self, price, quantity):
+        self.price = price
+        self.quantity = quantity
+
+    def total_price(self):
+        return self.price * self.quantity
 
 
-def prompt_float(prompt):
+class Checkout:
+    # my pos
+    def __init__(self):
+        self.items = [] # Store my items here
+
+def get_valid_number(prompt):
+
+    # Make sure the input is valid
     while True:
+        value = input(prompt)
+        if value.lower() == 'done':
+            return None
         try:
-            pos = float(input(prompt))
-            return pos
+            number = float(value)
+            if number < 0:
+                print("Please enter a positive number.")
+            else:
+                return number
         except ValueError:
-            print('Just floats')
+            print("Invalid input. Please enter a numeric value.")
 
 
 
-item_count = 0
-quantity    = 0
-price      = 0
 
-items = []
-
-
-price_of_item = prompt_float(f'Enter price of item {str(item_count +1)}:\n')
-quantity_of_item = prompt_float(f'Enter the quantity of item {str(item_count +1)}:\n')
-item_count +=1
+def main():
+    checkout = Checkout()
+    print(1+1) # testar :P
 
 
-items.append({'item_number'+str(item_count):{'price':price_of_item}})
-items[0]='item_number'+str(item_count)'quantity':= 2
-print(items)
 
 
-#item_and_price = # store in this? Dictonary maybe?
+
+if __name__ == "__main__": # Denna körs först
+    main()
 
 
 
@@ -40,12 +52,7 @@ print(items)
 
 
 
-"""
-
-square_feet = calculate_area(area_length, area_width) # Get the area of the room in square feet
-gallons_needed_count = calculate_gallons_needed(square_feet) # Display the output
-
-print(f'You will need to buy {gallons_needed_count} gallons of paint to cover {square_feet} square feet.')
 
 
-"""
+
+
