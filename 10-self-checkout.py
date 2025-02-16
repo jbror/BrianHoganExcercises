@@ -65,10 +65,7 @@ def main():
 
 
 
-
-if __name__ == "__main__": # Denna körs först
-    main()
-
+start = main()
 
 
 
