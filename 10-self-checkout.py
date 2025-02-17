@@ -21,10 +21,10 @@ class Checkout:
 
     def print_receipt(self):
         print('Receipt\n')
-
-        for i, stuff in enumerate(self.items, start=1):
+        for i, stuff in enumerate(self.items, start=0):
             print(f'yo {i} yo2 {stuff.price:.2f} yo3')
             print(f'kaka{(stuff.quantity)}')
+
 
 
 
@@ -49,24 +49,24 @@ def get_valid_number(prompt):
 
 def main():
 
-    checkout = Checkout() # this make the syntax easier to type
-
+    checkout = Checkout() # Creates my object
 
     while True:
         price = get_valid_number("Enter the price of the item (or 'done' to finish): ")
         if price is None:
             break  # Exit loop if user enters 'done'
+        quantity = get_valid_number('Enter the quantity: ')
 
-        quantity = get_valid_number("Enter the quantity: ")
-    checkout.print_receipt()
+        checkout.add_item(price, quantity)
 
-    #print(1+1) # testar :P
-
-
+    checkout.print_receipt() # Outside the loop so no more items. Lets print the receipt
 
 
-start = main()
 
+
+
+if __name__ == "__main__": # Kör inte min funktion "main" om jag importerar scriptet. Alltså körs bara koden om jag kör den direkt. Testar..
+    main()
 
 
 
