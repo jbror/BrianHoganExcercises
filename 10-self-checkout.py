@@ -3,7 +3,6 @@ class SupermarketItem: # This will represent an item
     def __init__(self, price, quantity):
         self.price = price
         self.quantity = quantity
-        #all_items.append(price, quantity)
 
     def total_price(self):
         return self.price * self.quantity
@@ -21,9 +20,9 @@ class Checkout:
 
     def print_receipt(self):
         print('Receipt\n')
-        for i, stuff in enumerate(self.items, start=0):
-            print(f'yo {i} yo2 {stuff.price:.2f} yo3')
-            print(f'kaka{(stuff.quantity)}')
+        for i, stuff in enumerate(self.items, start=1):
+            print(f'Item {i}: {stuff.quantity:.0f} and each cost {stuff.price:.2f}:- SEK Total without MOMS is {stuff.total_price():.2f}:- SEK')
+            #print(f'kaka{(stuff.quantity)}')
 
 
 
@@ -31,7 +30,7 @@ class Checkout:
 def get_valid_number(prompt):
 
     # checks for correct input
-    while True:
+    while True: #TODO? Should the quantity only be ints? :o
         value = input(prompt)
         if value.lower() == 'done':
             return None
@@ -56,6 +55,8 @@ def main():
         if price is None:
             break  # Exit loop if user enters 'done'
         quantity = get_valid_number('Enter the quantity: ')
+        if quantity is None:
+            break # If user enter 'done' here...
 
         checkout.add_item(price, quantity)
 
