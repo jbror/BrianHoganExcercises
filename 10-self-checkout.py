@@ -9,27 +9,34 @@ class SupermarketItem: # This will represent an item
 
 
 class Checkout:
-    MOMS = 0.25 # Tax rate (Moms in swedish!)
+    MOMS = 0.25 # Tax rate (Moms in Swedish!)
 
     def __init__(self):
         self.items = [] # Store all SupermarketItem objs here
 
     def add_item(self, price, quantity):
         self.items.append(SupermarketItem(price, quantity))
-        #print(len(self.items))
-
-    def calculate_tax(self):
-        if self.items:
-            tax_per_item = self.items[-1]
-            return tax_per_item.total_price() * self.MOMS
-        return 0 # If no items, returns 0
 
 
+    def calculate_tax(self,item, all_item = 1 ): # This calculates tax on the given item!
+        if all_item == 0:
+            return item.price * self.MOMS
+        else:
+            return item.total_price() * self.MOMS
+
+    #def total_price_with_tax # HERE!!! --- tax + total_price yo!!
 
     def print_receipt(self): # prints out the receipt and displays all the items with quantity and price. Also shows total price with moms(tax!) in SEK.
         print('Receipt\n')
         for i, item in enumerate(self.items, start=1):
-            print(f'Item {i}: {item.quantity:.0f} and each cost {item.price:.2f}:- SEK. - {self.calculate_tax()} Total without MOMS is {item.total_price():.2f}:- SEK')
+            tax_per_item = self.calculate_tax(item, all_item = 0)
+            total_tax_for_item = self.calculate_tax(item)
+
+            print(f'Item {i}: {item.quantity:.0f} pcs and each cost {item.price:.2f}:- SEK. Total without MOMS: {item.total_price()}:- SEK. ')
+            print(f' MOMS per item is {tax_per_item}:- SEK. Total price with MOMS {total_tax_for_item}:- SEK')
+
+
+
 
 
 def get_valid_number(prompt):
@@ -66,7 +73,7 @@ def main():
         checkout.add_item(price, quantity)
 
     checkout.print_receipt() # Outside the loop so no more items. Lets print the receipt
-    checkout.calculate_tax()
+    #checkout.calculate_tax()
 
 
 
