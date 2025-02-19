@@ -18,22 +18,33 @@ class Checkout:
         self.items.append(SupermarketItem(price, quantity))
 
 
-    def calculate_tax(self,item, all_item = 1 ): # This calculates tax on the given item!
+    def calculate_item_tax(self,item, all_item = 1 ): # This calculates tax on given item (totalprice x tax) and also calculate tax on single item (price x tax) if argument 0 is given.
         if all_item == 0:
-            return item.price * self.MOMS
-        else:
-            return item.total_price() * self.MOMS
+            tax_single_item = item.price * self.MOMS
+            return tax_single_item
 
-    #def total_price_with_tax # HERE!!! --- tax + total_price yo!!
+        else:
+            total_tax_item = item.total_price() * self.MOMS
+            return total_tax_item
+
+
+    def final_price_with_tax(self, item, all_item = 1): # HERE!!! ---
+        if all_item == 0:
+            final_price_item =  # HERE!!! ---
+        else:
+            final_price_all_item = # HERE!!! ---
+        return 1+1
+
 
     def print_receipt(self): # prints out the receipt and displays all the items with quantity and price. Also shows total price with moms(tax!) in SEK.
-        print('Receipt\n')
+        print('\nReceipt\n')
         for i, item in enumerate(self.items, start=1):
-            tax_per_item = self.calculate_tax(item, all_item = 0)
-            total_tax_for_item = self.calculate_tax(item)
+            tax_per_item = self.calculate_item_tax(item, all_item = 0)
+            total_tax_for_item = self.calculate_item_tax(item)
 
-            print(f'Item {i}: {item.quantity:.0f} pcs and each cost {item.price:.2f}:- SEK. Total without MOMS: {item.total_price()}:- SEK. ')
-            print(f' MOMS per item is {tax_per_item}:- SEK. Total price with MOMS {total_tax_for_item}:- SEK')
+            print(f'Item {i}: {item.quantity:.0f} pcs and each cost {item.price:.2f}:- SEK. Total without MOMS: {item.total_price():.2f}:- SEK. ')
+            print(f' MOMS per item is {tax_per_item}:- SEK. Total MOMS for item {total_tax_for_item}:- SEK')
+            print(f' Total price with MOMS is { # HERE----------------------------}')
 
 
 
