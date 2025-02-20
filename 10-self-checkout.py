@@ -27,25 +27,27 @@ class Checkout:
             total_tax_item = item.total_price() * self.MOMS
             return total_tax_item
 
+    def final_item_price(self, item):
+        final_price_item = item.total_price() * self.MOMS + item.total_price()
+        return final_price_item
 
-    def final_price_with_tax(self, item, all_item = 1): # HERE!!! ---
-        if all_item == 0:
-            final_price_item =  # HERE!!! ---
-        else:
-            final_price_all_item = # HERE!!! ---
-        return 1+1
+    def final_total_price(self): # THIS will get ME THE FINAL BILL PRICE! -- ´HERE WORK
+        return
 
 
     def print_receipt(self): # prints out the receipt and displays all the items with quantity and price. Also shows total price with moms(tax!) in SEK.
-        print('\nReceipt\n')
+        print('\n'+'RECEIPT'.center(21, '.'))
         for i, item in enumerate(self.items, start=1):
             tax_per_item = self.calculate_item_tax(item, all_item = 0)
             total_tax_for_item = self.calculate_item_tax(item)
+            total_item_price_with_tax = self.final_item_price(item)
+            #final_price_receipt = self.final_price_with_tax(item)
+
 
             print(f'Item {i}: {item.quantity:.0f} pcs and each cost {item.price:.2f}:- SEK. Total without MOMS: {item.total_price():.2f}:- SEK. ')
-            print(f' MOMS per item is {tax_per_item}:- SEK. Total MOMS for item {total_tax_for_item}:- SEK')
-            print(f' Total price with MOMS is { # HERE----------------------------}')
-
+            print(f' MOMS per item is {tax_per_item:.2f}:- SEK. Total MOMS: {total_tax_for_item:.2f}:- SEK')
+            print(f' Total price with MOMS is {total_item_price_with_tax:.2f}:- SEK.\n')
+        #print(f'Total amount with MOMS: {final_price_receipt:.2f}:- SEK.')
 
 
 
@@ -91,10 +93,6 @@ def main():
 
 if __name__ == "__main__": # Kör inte min funktion "main" om jag importerar scriptet. Alltså körs bara koden om jag kör den direkt. Testar..
     main()
-
-
-
-
 
 
 
