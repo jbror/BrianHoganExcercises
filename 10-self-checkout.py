@@ -32,8 +32,8 @@ class Checkout:
         return final_price_item
 
     def final_total_price(self): # THIS will get ME THE FINAL BILL PRICE! -- ´HERE WORK
-        return
 
+        return sum(self.final_item_price(item) for item in self.items)
 
     def print_receipt(self): # prints out the receipt and displays all the items with quantity and price. Also shows total price with moms(tax!) in SEK.
         print('\n'+'RECEIPT'.center(21, '.'))
@@ -41,13 +41,14 @@ class Checkout:
             tax_per_item = self.calculate_item_tax(item, all_item = 0)
             total_tax_for_item = self.calculate_item_tax(item)
             total_item_price_with_tax = self.final_item_price(item)
-            #final_price_receipt = self.final_price_with_tax(item)
+            final_price_receipt = self.final_total_price()
 
 
             print(f'Item {i}: {item.quantity:.0f} pcs and each cost {item.price:.2f}:- SEK. Total without MOMS: {item.total_price():.2f}:- SEK. ')
             print(f' MOMS per item is {tax_per_item:.2f}:- SEK. Total MOMS: {total_tax_for_item:.2f}:- SEK')
             print(f' Total price with MOMS is {total_item_price_with_tax:.2f}:- SEK.\n')
-        #print(f'Total amount with MOMS: {final_price_receipt:.2f}:- SEK.')
+        print(f'Total amount without MOMS: {final_price_receipt:.2f}:- SEK.') # working here
+        print(f'Total amount with MOMS: {final_price_receipt:.2f}:- SEK.')
 
 
 
@@ -55,7 +56,7 @@ class Checkout:
 def get_valid_number(prompt):
 
     # checks for correct input
-    while True: #TODO? Should the quantity only be ints? :o
+    while True:
         value = input(prompt)
         if value.lower() == 'done':
             return None
@@ -67,8 +68,6 @@ def get_valid_number(prompt):
                 return number
         except ValueError:
             print('Invalid input. Please enter a numeric value.')
-
-
 
 
 def main():
@@ -86,18 +85,11 @@ def main():
         checkout.add_item(price, quantity)
 
     checkout.print_receipt() # Outside the loop so no more items. Lets print the receipt
-    #checkout.calculate_tax()
-
 
 
 
 if __name__ == "__main__": # Kör inte min funktion "main" om jag importerar scriptet. Alltså körs bara koden om jag kör den direkt. Testar..
     main()
-
-
-
-
-
 
 
 
